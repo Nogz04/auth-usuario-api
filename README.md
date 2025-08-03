@@ -4,7 +4,7 @@ Um projeto Spring Boot para autenticação e gerenciamento de usuários usando J
 
 ## Visão Geral
 
-Este projeto é uma API RESTful construída com Spring Boot que fornece endpoints para registro e login de usuários. A autenticação é baseada em token, utilizando JWT para proteger os endpoints e garantir que apenas usuários autorizados possam acessar recursos específicos.
+Este projeto é uma API RESTful construída com Spring Boot com padrão de arquitetura MVC que fornece endpoints para registro e login de usuários. A autenticação é baseada em token, utilizando JWT para proteger os endpoints e garantir que apenas usuários autorizados possam acessar recursos específicos. Além disso, a autenticação tem criptografia de senha para segurança do usuário.
 
 ## Funcionalidades
 
@@ -71,7 +71,7 @@ auth/
 
 * **Java 17**: Versão da linguagem Java utilizada no projeto.
 * **Spring Boot**: Framework principal para a criação da aplicação.
-* **Spring Security**: Para a implementação da autenticação e autorização.
+* **Spring Security**: Para a implementação da autenticação, autorização e criptografia de senhas.
 * **Spring Data JPA**: Para a persistência de dados e interação com o banco de dados.
 * **Maven**: Para o gerenciamento de dependências e build do projeto.
 * **MySQL**: Banco de dados relacional utilizado para armazenar os dados dos usuários.
@@ -90,7 +90,7 @@ A seguir estão os principais endpoints disponíveis na API:
         {
           "nome": "Seu Nome",
           "email": "seuemail@exemplo.com",
-          "senha": "sua_senha_forte"
+          "senha": "sua_senha"
         }
         ```
 * `POST /auth/login`: Autentica um usuário e retorna um token JWT.
@@ -128,8 +128,6 @@ Antes de executar o projeto, certifique-se de configurar as seguintes propriedad
     ```
 2.  **Configure o `application.properties`** com as suas credenciais do banco de dados e uma chave secreta JWT.
 3.  **Execute a aplicação** usando o Maven:
-    ```bash
-    ./mvnw spring-boot:run
-    ```
+  
 
-A aplicação estará disponível em `http://localhost:8080`.
+A aplicação estará disponível por padrão em `http://localhost:8080`.
